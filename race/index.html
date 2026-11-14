@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Droney ghost challenge</title>
+<meta name="description" content="Someone challenged you to beat their ghost in Droney, the one-tap drone flying game.">
+<meta property="og:title" content="👻 Droney ghost challenge">
+<meta property="og:description" content="Can you beat my ghost in Droney? Fly from a cornfield to the galaxy, on one tap.">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded",system-ui,sans-serif;color:#14233b;
+    background:linear-gradient(180deg,#2f8cff 0%,#7cc4ff 55%,#ffe2b8 100%);display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{background:#fffaf3;border-radius:28px;max-width:420px;width:100%;padding:32px 26px 26px;text-align:center;box-shadow:0 20px 50px rgba(10,40,90,.3)}
+  img{width:96px;height:96px;border-radius:22px;box-shadow:0 10px 24px rgba(10,40,90,.3);animation:bob 3s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+  h1{font-size:30px;margin:18px 0 4px;color:#ff8a1f}
+  .big{font-size:22px;font-weight:800;color:#4a3fa0;margin:6px 0}
+  p{color:#4a5b75;line-height:1.5;margin:8px 0 18px}
+  a.btn{display:block;text-decoration:none;font-weight:800;font-size:17px;padding:14px;border-radius:16px;margin:10px 0}
+  .open{background:#5ad47a;color:#fff}.get{background:#14233b;color:#fff}.home{color:#1f6fe0;font-weight:600;font-size:15px;display:inline-block;margin-top:10px}
+  small{color:#7a8aa3}
+</style>
+</head>
+<body>
+<div class="card">
+  <img id="icon" alt="Droney" src="">
+  <h1>👻 Challenge!</h1>
+  <div class="big" id="who">Someone wants to race you</div>
+  <p id="sub">Beat their ghost on the exact same course in Droney.</p>
+  <a class="btn open" id="open" href="droney://race">Open in Droney</a>
+  <a class="btn get" href="/">Get Droney · coming soon to the App Store</a>
+  <small>Already have Droney? Tap <b>Open in Droney</b>.</small><br>
+  <a class="home" href="/">droneygame.com</a>
+</div>
+<script>
+(async()=>{
+  fetch('/').then(r=>r.text()).then(t=>{ const u=(t.match(/data:image\/jpeg;base64,[A-Za-z0-9+\/=]+/)||[])[0]; if(u) document.getElementById('icon').src=u; }).catch(()=>{});
+  const m=location.hash.match(/[#&]g=([A-Za-z0-9_-]+)/); if(!m) return;
+  document.getElementById('open').href='droney://race#g='+m[1];
+  try{
+    const b64=m[1].replace(/-/g,'+').replace(/_/g,'/'); const bin=atob(b64+'==='.slice((b64.length+3)%4));
+    const z=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) z[i]=bin.charCodeAt(i);
+    const bytes=new Uint8Array(await new Response(new Blob([z]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer());
+    const h=JSON.parse(new TextDecoder().decode(bytes.slice(0,bytes.indexOf(0))));
+    const name=String(h.n||'A friend').slice(0,16).replace(/[<>&]/g,'');
+    document.getElementById('who').textContent=`${name} flew ${(+h.m).toFixed(2)} NM`;
+    document.getElementById('sub').textContent=`Can you beat ${name==='A friend'?'their':name+"'s"} ghost on the same course?`;
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
