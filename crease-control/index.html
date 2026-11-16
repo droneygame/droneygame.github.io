@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crease Control: Privacy and Support</title>
+<style>
+  :root {
+    --bg: #0d0e16;
+    --panel: #171926;
+    --line: #262a3b;
+    --text: #eceef4;
+    --muted: #a3a8b8;
+    --accent: #ff9f2e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: linear-gradient(#1b1d2c, var(--bg) 420px);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
+  .dial { width: 64px; height: 64px; flex: none; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  .tag { color: var(--accent); font-weight: 600; margin: 4px 0 0; }
+  nav { display: flex; gap: 10px; margin: 28px 0 36px; flex-wrap: wrap; }
+  nav a {
+    color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px;
+    padding: 9px 16px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line);
+  }
+  nav a:hover { border-color: var(--accent); }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 28px 26px; margin-bottom: 26px; }
+  h2 { font-size: 24px; margin: 0 0 6px; }
+  h3 { font-size: 17px; margin: 24px 0 4px; color: var(--accent); }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); font-size: 15px; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  .contact {
+    margin-top: 10px; padding: 14px 16px; border-radius: 12px; background: #10121c; border: 1px dashed var(--line);
+    font-size: 16px;
+  }
+  footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 30px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <svg class="dial" viewBox="0 0 64 64" aria-hidden="true">
+      <rect width="64" height="64" rx="15" fill="#151827"/>
+      <path d="M12 40 A20 20 0 0 1 52 40" fill="none" stroke="#ff9f2e" stroke-width="4" stroke-linecap="round"/>
+      <line x1="32" y1="40" x2="20" y2="24" stroke="#eceef4" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="32" cy="40" r="4" fill="#ff9f2e"/>
+      <rect x="17" y="47" width="30" height="9" rx="2" fill="#0a0b12" stroke="#3a3f55"/>
+    </svg>
+    <div>
+      <h1>Crease Control</h1>
+      <p class="tag">Every fold counts.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy Policy</a>
+  </nav>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p class="muted">Crease Control is a fold odometer and angle gauge for iPhone Duo.</p>
+
+    <h3>It only counts folds while the app is open</h3>
+    <p>Counting while the app is closed uses two short automations in Apple's Shortcuts app. Open Crease Control, go to Settings, then Background counting, and follow the guide. Each step can be ticked off as you go, and the guide turns green once both automations have run. Background counting needs iOS 27.2 or later.</p>
+
+    <h3>My widget isn't up to date</h3>
+    <p>iOS decides when widgets refresh. Folding or unfolding the phone, or opening the app once, usually brings it up to date. If you changed the odometer face or the appearance, give the widget a moment, or remove it and add it again.</p>
+
+    <h3>I already had a fold count in another app</h3>
+    <p>Go to Settings, then Starting count, and type in your total. Your odometer starts from there. Badges are earned only on folds Crease Control counts itself.</p>
+
+    <h3>I got a new phone</h3>
+    <p>Your Garage and lifetime total are saved to your own iCloud. On a new phone, Crease Control asks whether it is the same phone or a new one. For a replacement phone or a new hinge, use Settings, then Retire this phone, to move the old one to your Garage and start the odometer at zero.</p>
+
+    <h3>Does it use my location or drain my battery?</h3>
+    <p>No. Crease Control never asks for your location and does not run in the background. The Shortcuts automations wake it for a moment when you open or close your phone.</p>
+
+    <h3>I bought it on a phone that doesn't fold</h3>
+    <p>Crease Control reads the hinge, so it needs an iPhone Duo. Apple handles refunds at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+    <h3>Still stuck, or have an idea?</h3>
+    <p>Email us and include your iPhone model and iOS version.</p>
+    <div class="contact"><a href="mailto:rarest.shrines.9o@icloud.com">rarest.shrines.9o@icloud.com</a></div>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p class="muted">Effective November 16, 2026</p>
+
+    <p>Crease Control does not collect any information about you. This policy explains what the app stores and where.</p>
+
+    <h3>What we collect</h3>
+    <p>Nothing. The app has no account, no sign-in, no analytics, no advertising and no tracking. It does not send your data to us or to anyone else.</p>
+
+    <h3>What stays on your phone</h3>
+    <ul>
+      <li>Your fold counts, history, badges, trip meter and settings.</li>
+      <li>Angle habits, which record how long the hinge sits in each position while the app is open.</li>
+    </ul>
+    <p>This information is stored on your iPhone and shared only with the app's own widgets on the same phone.</p>
+
+    <h3>Your iCloud</h3>
+    <p>Your Garage, lifetime total and each phone's odometer are saved to your own iCloud account so they carry over to a new phone. That data is held by Apple under your Apple Account and Apple's privacy policy. We cannot see or access it. If you turn off iCloud for Crease Control, it stays on your phone only.</p>
+
+    <h3>Location, motion and other permissions</h3>
+    <p>Crease Control does not ask for your location, contacts, photos, camera, microphone or health data. It reads the iPhone Duo hinge angle through Apple's standard system feature while the app is on screen.</p>
+
+    <h3>Notifications</h3>
+    <p>If you turn on badge alerts, the app schedules notifications on your phone, such as when you earn a badge or at the start of a month. They are created on your phone and are not sent through any server.</p>
+
+    <h3>Shortcuts</h3>
+    <p>The optional Count Fold and Count Unfold actions run on your phone inside Apple's Shortcuts app and only update your fold count.</p>
+
+    <h3>Children</h3>
+    <p>The app collects no personal information from anyone, including children.</p>
+
+    <h3>Deleting your data</h3>
+    <p>Deleting the app removes the data stored on your phone. To remove the copy in your iCloud, go to Settings on your iPhone, tap your name, then iCloud, then Manage Storage, and delete Crease Control's data if it is listed.</p>
+
+    <h3>Changes</h3>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+
+    <h3>Contact</h3>
+    <div class="contact"><a href="mailto:rarest.shrines.9o@icloud.com">rarest.shrines.9o@icloud.com</a></div>
+  </section>
+
+  <footer>Crease Control is not affiliated with Apple Inc. iPhone is a trademark of Apple Inc.</footer>
+</main>
+</body>
+</html>
